@@ -57,13 +57,11 @@ def flip_all_images(image_files, SOURCE_DIR, OUTPUT_DIR):
     line3 = "Flipping and saving those photos to output directory: " + OUTPUT_DIR
 
     log_file_name = OUTPUT_DIR + "000_flip_all_images.log"
-    log_file_name = open(log_file_name, "w")
-    log_file_name.write(line0 + "\n")
-    log_file_name.write(line1 + "\n")
-    log_file_name.write(line2 + "\n")
-    log_file_name.write(line3 + "\n")
-    log_file_name.close()
-
+    with open(log_file_name, "w") as log_file_name:
+        log_file_name.write(line0 + "\n")
+        log_file_name.write(line1 + "\n")
+        log_file_name.write(line2 + "\n")
+        log_file_name.write(line3 + "\n")
     print(line1)
     print(line2)
     print(line3)

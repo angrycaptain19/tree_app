@@ -111,8 +111,7 @@ def imshow(image, ax=None, title=None):
 def load_json(json_file):
 
     with open(json_file, 'r') as f:
-        tree_to_name = json.load(f)
-        return tree_to_name
+        return json.load(f)
 
 
 # Function to display an image along with the top 5 classes

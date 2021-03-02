@@ -137,10 +137,9 @@ def run_vgg19_style_transfer(content, style):
     # iteration hyperparameters
     optimizer = optim.Adam([target], lr=0.003)
     steps = 2000  # decide how many iterations to update your image (5000)
-
 # Iteratively modify the target image while keeping the loss minimal. Modify for ‘steps’ number of steps.
 
-    for ii in range(1, steps+1):
+    for _ in range(1, steps+1):
 
         # get the features from your target image
         target_features = get_features(target, vgg)
@@ -172,6 +171,4 @@ def run_vgg19_style_transfer(content, style):
         total_loss.backward()
         optimizer.step()
 
-    final_image = im_convert(target)
-
-    return final_image
+    return im_convert(target)
